@@ -1,0 +1,12 @@
+.navbar {
+  background-color: lightsalmon;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li {
+  list-style-type: none;
+}
