@@ -5,6 +5,7 @@ import UserName from "./components/UserName";
 import UserPosts from "./components/UserPosts";
 import { Metadata } from "next"
 import styles from "./styles.module.css";
+import getAllUsers from "@/lib/getAllUsers";
 
 export async function generateMetadata({ params: { userId }}: IUserProps): Promise<Metadata> {
   const user = await getUser(userId);
@@ -33,4 +34,11 @@ export default async function User({ params: { userId }}: IUserProps) {
     </Suspense>
     </>
   )
+}
+
+export async function generateStaticParams() {
+  const users = await getAllUsers();
+  return users.map(user => ({
+    userId: user.id.toString()
+  }))
 }
