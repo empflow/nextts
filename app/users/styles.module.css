@@ -5,15 +5,15 @@
 .user {
   list-style-type: none;
   margin-bottom: 20px;
-  border: 1px solid #3c3c3c;
+  border: 1px solid var(--clr-accent);
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-normal);
   cursor: pointer;
   transition: 0.2s;
 }
 
 .user:hover {
-  background-color: rgb(35, 35, 35);
+  background-color: var(--clr-bg-secondary);
 }
 
 .userName {

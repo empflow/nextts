@@ -1,10 +1,12 @@
+import Link from "next/link";
 import styles from "../styles.module.css";
 
 interface UserPostsProps {
-  postsPromise: Promise<Post[]>
+  postsPromise: Promise<Post[]>,
+  userId: string
 }
 
-export default async function UserPosts({ postsPromise }: UserPostsProps) {
+export default async function UserPosts({ postsPromise, userId }: UserPostsProps) {
   const posts = await postsPromise;
 
   const postsNodes = posts.map((post, i) => {
@@ -14,9 +16,13 @@ export default async function UserPosts({ postsPromise }: UserPostsProps) {
     const bodyExcerpt = getExcerpt(post.body, bodyExcerptLength);
 
     return (
-      <article key={i} className={styles.post}>
-        <h2>{titleExcerpt}</h2>
-        <p>{bodyExcerpt}</p>
+      <article key={i} className={styles.postContainer}>
+        <Link href={`/users/${userId}/${post.id}`}>
+          <div className={styles.post}>
+            <h2 className={styles.postTitle}>{titleExcerpt}</h2>
+            <p className={styles.postExcerpt}>{bodyExcerpt}</p>
+          </div>
+        </Link>
       </article>
     )
   })

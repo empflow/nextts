@@ -1,6 +1,15 @@
 :root {
   --clr-font-main: #f0f0f0;
-  --clr-light-gray: rgba(255,255,255, 0.2);
+  --clr-font-secondary: #a8a8a8;
+  --clr-accent: rgba(255,255,255, 0.2);
+  --clr-bg-main: #000;
+  --clr-bg-secondary: rgb(35, 35, 35);
+  --border-radius-large: 10px;
+  --border-radius-normal: 5px;
+  --border-radius-small: 3px;
+  --transition-fast: 0.1s;
+  --transition-normal: 0.2s;
+  --transition-slow: 0.4s;
 }
 
 * {
@@ -12,7 +21,7 @@
 body {
   font-weight: 400;
   color: var(--clr-font-main);
-  background-color: black;
+  background-color: var(--clr-bg-main);
 }
 
 main {
@@ -27,7 +36,7 @@ a:any-link {
 }
 
 .nav {
-  border-bottom: 2px solid var(--clr-light-gray);
+  border-bottom: 2px solid var(--clr-accent);
   padding: 15px 0;
 }
 
