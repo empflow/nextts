@@ -1,10 +1,10 @@
 import styles from "../styles.module.css";
 
-interface PageTitleProps {
+interface PageTitleParams {
   userPromise: Promise<User>
 }
 
-export default async function PageTitle({ userPromise }: PageTitleProps) {
+export default async function PageTitle({ userPromise }: PageTitleParams) {
   const user = await userPromise;
 
   return (

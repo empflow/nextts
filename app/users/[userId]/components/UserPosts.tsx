@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styles from "../styles.module.css";
 
-interface UserPostsProps {
+interface UserPostsParams {
   postsPromise: Promise<Post[]>,
   userId: string
 }
 
-export default async function UserPosts({ postsPromise, userId }: UserPostsProps) {
+export default async function UserPosts({ postsPromise, userId }: UserPostsParams) {
   const posts = await postsPromise;
 
   const postsNodes = posts.map((post, i) => {

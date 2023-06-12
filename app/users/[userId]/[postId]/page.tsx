@@ -1,6 +1,5 @@
 import getPost from "@/lib/getPost";
 import { Suspense } from "react";
-import styles from "./style.module.css";
 import PageContent from "./components/PageContent";
 
 interface UserPostParams {

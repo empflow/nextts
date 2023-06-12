@@ -4,10 +4,9 @@ import { Suspense } from "react";
 import UserName from "./components/UserName";
 import UserPosts from "./components/UserPosts";
 import { Metadata } from "next"
-import styles from "./styles.module.css";
 import getAllUsers from "@/lib/getAllUsers";
 
-export async function generateMetadata({ params: { userId }}: IUserProps): Promise<Metadata> {
+export async function generateMetadata({ params: { userId }}: IUserParams): Promise<Metadata> {
   const user = await getUser(userId);
   return {
     title: user.name,
@@ -15,11 +14,11 @@ export async function generateMetadata({ params: { userId }}: IUserProps): Promi
   }
 }
 
-interface IUserProps {
+interface IUserParams {
   params: { userId: string }
 }
 
-export default async function User({ params: { userId }}: IUserProps) {
+export default async function User({ params: { userId }}: IUserParams) {
   const userPromise = getUser(userId);
   const userPostsPromise = getUserPosts(userId);
 
