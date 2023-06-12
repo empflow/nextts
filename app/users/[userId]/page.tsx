@@ -1,4 +1,3 @@
-import { FC } from "react";
 import getUser from "@/lib/getUser";
 import getUserPosts from "@/lib/getUserPosts";
 import { Suspense } from "react";
@@ -7,8 +6,12 @@ import UserPosts from "./components/UserPosts";
 import { Metadata } from "next"
 import styles from "./styles.module.css";
 
-export const metadata: Metadata = {
-  title: "User Posts"
+export async function generateMetadata({ params: { userId }}: IUserProps): Promise<Metadata> {
+  const user = await getUser(userId);
+  return {
+    title: user.name,
+    description: `The page of ${user.name}`
+  }
 }
 
 interface IUserProps {

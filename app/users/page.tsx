@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import getAllUsers from "../../lib/getAllUsers";
 import Link from "next/link";
 import styles from "./styles.module.css";
