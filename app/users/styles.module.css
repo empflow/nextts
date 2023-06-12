@@ -3,7 +3,17 @@
 }
 
 .user {
+  list-style-type: none;
   margin-bottom: 20px;
+  border: 1px solid #3c3c3c;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.user:hover {
+  background-color: rgb(35, 35, 35);
 }
 
 .userName {
@@ -11,7 +21,7 @@
   margin-bottom: 5px;
 }
 
-.userPhone, .userLocation {
-  font-weight: 400;
+.userCompanyName {
+  font-weight: 400px;
+  font-style: italic;
 }
-

@@ -1,13 +1,45 @@
+:root {
+  --clr-font-main: #f0f0f0;
+  --clr-light-gray: rgba(255,255,255, 0.2);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
+body {
   font-weight: 400;
+  color: var(--clr-font-main);
+  background-color: black;
 }
 
 main {
   padding: 30px;
+  max-width: 600px;
+  margin: auto;
+}
+
+a:any-link {
+  color: var(--clr-font-main);
+  text-decoration: none;
+}
+
+.nav {
+  border-bottom: 2px solid var(--clr-light-gray);
+  padding: 15px 0;
+}
+
+.nav .nav-items {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+.nav .nav-items .nav-item {
+  list-style-type: none;
 }

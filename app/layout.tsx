@@ -13,14 +13,16 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About this site</Link></li>
-            <li><Link href="/about/me">About me</Link></li>
+        <nav className='nav'>
+          <ul className='nav-items'>
+            <li className='nav-item'><Link href="/">Home</Link></li>
+            <li className='nav-item'><Link href="/about">About this site</Link></li>
+            <li className='nav-item'><Link href="/users">Our unhappy users</Link></li>
           </ul>
         </nav>
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )

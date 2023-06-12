@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 
 const AboutMe: FC<IAboutMeProps> = () => {
   return (
+    <>
     <h1>my name is uhhh i forogr</h1>
+    </>
   )
 }
 
