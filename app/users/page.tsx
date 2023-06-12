@@ -8,20 +8,22 @@ export const metadata: Metadata = {
 }
 
 export default async function Users() {
-  const users: User[] = await getAllUsers();
+  const users = await getAllUsers();
 
   const usersNodes = users.map((user, i) => (
-    <li className={styles.user} key={i}>
+    <div className={styles.userContainer} key={i}>
       <Link href={`/users/${user.id}`}>
-        <h3 className={styles.userName}>{user.name}</h3>
-        <p className={styles.userCompanyName}>{user.company.name}</p>
+        <div className={styles.user}>
+          <h3 className={styles.userName}>{user.name}</h3>
+          <p className={styles.userCompanyName}>{user.company.name}</p>
+        </div>
       </Link>
-    </li>
+    </div>
   ))
 
   return (
     <>
-    <h1 className={styles.usersPageTitle}>Users</h1>
+    <h1 className={styles.pageTitle}>Users</h1>
     <ol>{usersNodes}</ol>
     </>
   )

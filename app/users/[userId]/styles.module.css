@@ -14,8 +14,8 @@
   border: 1px solid var(--clr-accent);
   padding: 15px 20px;
   border-radius: var(--border-radius-normal);
-  cursor: pointer;
   transition: var(--transition-normal);
+  cursor: pointer;
 }
 
 .post:hover {

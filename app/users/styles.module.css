@@ -1,15 +1,21 @@
-.usersPageTitle {
+.pageTitle {
   margin-bottom: 15px;
 }
 
+.userContainer {
+  margin-bottom: 15px;
+}
+
+.userContainer:last-of-type {
+  margin-bottom: 0;
+}
+
 .user {
-  list-style-type: none;
-  margin-bottom: 20px;
   border: 1px solid var(--clr-accent);
-  padding: 10px 15px;
+  padding: 15px 20px;
   border-radius: var(--border-radius-normal);
   cursor: pointer;
-  transition: 0.2s;
+  transition: var(--transition-normal);
 }
 
 .user:hover {
