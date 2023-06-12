@@ -2,7 +2,7 @@ import { FC } from "react";
 import getUser from "@/lib/getUser";
 import getUserPosts from "@/lib/getUserPosts";
 import { Suspense } from "react";
-import PageTitle from "./components/PageTitle";
+import UserName from "./components/UserName";
 import UserPosts from "./components/UserPosts";
 import { Metadata } from "next"
 import styles from "./styles.module.css";
@@ -23,7 +23,7 @@ export default async function User({ params: { userId }}: IUserProps) {
     <>
     <Suspense fallback={<h2>Loading title...</h2>}>
       {/* @ts-expect-error */}
-      <PageTitle userPromise={userPromise} />
+      <UserName userPromise={userPromise} />
     </Suspense>
 
     <Suspense fallback={<h2>Loading posts...</h2>}>

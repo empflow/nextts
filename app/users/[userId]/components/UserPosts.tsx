@@ -12,8 +12,6 @@ export default async function UserPosts({ postsPromise }: UserPostsProps) {
     const bodyExcerptLength = 50;
     const titleExcerpt = getExcerpt(post.title, titleExcerptLength);
     const bodyExcerpt = getExcerpt(post.body, bodyExcerptLength);
-    console.log(titleExcerpt);
-    console.log(bodyExcerpt);
 
     return (
       <article key={i} className={styles.post}>

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { FC } from "react";
+import { Metadata } from "next"
 
-interface IAboutProps {
-  
+export const metadata: Metadata = {
+  title: "About"
 }
 
-const About: FC<IAboutProps> = () => {
+export default function About() {
   return (
     <>
     <h1>about page</h1>
@@ -15,5 +15,3 @@ const About: FC<IAboutProps> = () => {
     </>
   )
 }
-
-export default About;
