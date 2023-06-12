@@ -1,0 +1,17 @@
+.usersPageTitle {
+  margin-bottom: 15px;
+}
+
+.user {
+  margin-bottom: 20px;
+}
+
+.userName {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.userPhone, .userLocation {
+  font-weight: 400;
+}
+

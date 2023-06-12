@@ -2,11 +2,10 @@
 
 import './globals.css'
 import Link from 'next/link'
-import { Abhaya_Libre } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const inter = Abhaya_Libre({
-  subsets: ["latin"],
-  weight: "700"
+const inter = Inter({
+  subsets: ["latin"]
 })
 
 

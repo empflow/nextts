@@ -3,3 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-weight: 400;
+}
+
+main {
+  padding: 30px;
+}
