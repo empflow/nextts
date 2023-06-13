@@ -1,24 +1,10 @@
-import styles from './page.module.css'
-import { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Home"
-}
+import Image from "next/image"
 
 export default function Home() {
   return (
     <>
-    <h1 className={styles.pageTitle}>Home page</h1>
-
-    <section className="news-container">
-      <h2 className={styles.newsTitle}>News</h2>
-
-      <ul>
-        <li>Helicopter shot down</li>
-        <li>house prices on the rise</li>
-        <li>Helicopter shot down</li>
-      </ul>
-    </section>
+    <img src="https://i.ytimg.com/vi/843nec-IvW0/hqdefault_1054800.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8v6VL__El534ASr3Uetb633I4Yg" alt="video thumbnail" style={{ minWidth: "100%" }} />
+    <div className="min-h-screen"></div>
     </>
   )
 }

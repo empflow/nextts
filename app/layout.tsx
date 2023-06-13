@@ -1,25 +1,23 @@
-"use client";
-
 import './globals.css'
-import Link from 'next/link'
-import { Inter } from "next/font/google";
+import { Inter } from 'next/font/google'
+import Header from './components/Header'
 
-const inter = Inter({
-  subsets: ["latin"]
-})
+const inter = Inter({ subsets: ['latin'] })
 
+export const metadata = {
+  title: 'Page',
+  description: 'This is a page of my NextJS web application',
+}
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='nav'>
-          <ul className='nav-items'>
-            <li className='nav-item'><Link href="/">Home</Link></li>
-            <li className='nav-item'><Link href="/about">About</Link></li>
-            <li className='nav-item'><Link href="/users">Users</Link></li>
-          </ul>
-        </nav>
+        <Header />
         <main>
           {children}
         </main>

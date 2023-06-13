@@ -1,54 +1,8 @@
-:root {
-  --clr-font-main: #f0f0f0;
-  --clr-font-secondary: #a8a8a8;
-  --clr-accent: rgba(255,255,255, 0.2);
-  --clr-bg-main: #000;
-  --clr-bg-secondary: rgb(35, 35, 35);
-  --border-radius-large: 10px;
-  --border-radius-normal: 5px;
-  --border-radius-small: 3px;
-  --transition-fast: 0.1s;
-  --transition-normal: 0.2s;
-  --transition-slow: 0.4s;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  font-weight: 400;
-  color: var(--clr-font-main);
-  background-color: var(--clr-bg-main);
-}
-
-main {
-  padding: 30px;
-  max-width: 600px;
-  margin: auto;
-}
-
-a:any-link {
-  color: var(--clr-font-main);
-  text-decoration: none;
-}
-
-.nav {
-  border-bottom: 2px solid var(--clr-accent);
-  padding: 15px 0;
-}
-
-.nav .nav-items {
-  max-width: 600px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: auto;
-  padding: 0 30px;
-}
-
-.nav .nav-items .nav-item {
-  list-style-type: none;
+  background-color: black;
+  color: white;
 }
