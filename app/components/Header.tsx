@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Search from "./Search";
 
 export default function Header()     {
   return (
@@ -18,6 +19,8 @@ export default function Header()     {
             </li>
           </ul>
         </nav>
+
+        <Search />
       </div>
     </header>
   )
