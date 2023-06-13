@@ -1,13 +1,15 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import styles from "../styles.module.css";
 
 interface UserPostsParams {
-  postsPromise: Promise<Post[]>,
+  postsPromise: Promise<Post[]  | undefined>,
   userId: string
 }
 
 export default async function UserPosts({ postsPromise, userId }: UserPostsParams) {
   const posts = await postsPromise;
+  if (!posts) notFound()
 
   const postsNodes = posts.map((post, i) => {
     const titleExcerptLength = 30;
