@@ -9,7 +9,7 @@ interface UserPostsParams {
 
 export default async function UserPosts({ postsPromise, userId }: UserPostsParams) {
   const posts = await postsPromise;
-  if (!posts) notFound()
+  if (!posts) notFound();
 
   const postsNodes = posts.map((post, i) => {
     const titleExcerptLength = 30;

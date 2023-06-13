@@ -1,3 +1,4 @@
+import getAllPosts from "@/lib/getAllPosts";
 import getPost from "@/lib/getPost";
 import { Suspense } from "react";
 import PageContent from "./components/PageContent";
@@ -14,4 +15,11 @@ export default async function UserPost({ params: { postId }}: UserPostParams) {
       <PageContent postPromise={postPromise} />
     </Suspense>
   )
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map(post => ({
+    postId: post.id.toString()
+  }))
 }
