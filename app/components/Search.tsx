@@ -8,14 +8,14 @@ export default function Search() {
   const router = useRouter();
 
   return (
-    <div className="">
+    <div className="max-w-[250px] flex-grow">
       <input
         type="text"
         placeholder="Search..."
-        className="text-huge text-black"
+        className="dark:text-black w-full rounded-sm bg-neutral-700 px-3 py-1"
         value={query}
-        onChange={e => setQuery(e.target.value)}
+        onChange={(e) => setQuery(e.target.value)}
       />
     </div>
-  )
+  );
 }
