@@ -21,7 +21,6 @@ export default function Header() {
           </ul>
         </nav>
 
-        <ThemeSwitch />
         <Search />
       </div>
     </header>

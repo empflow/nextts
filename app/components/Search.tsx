@@ -12,7 +12,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search..."
-        className="w-full rounded bg-c-gray-100 px-3 py-1 text-black duration-200 placeholder:font-light placeholder:text-gray-400 focus:bg-c-gray-200 dark:bg-neutral-700 dark:text-white"
+        className="w-full rounded bg-c-gray-100 px-3 py-1 text-black duration-300 placeholder:font-light placeholder:text-gray-400 focus:bg-c-gray-200 dark:bg-neutral-700 dark:text-white"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

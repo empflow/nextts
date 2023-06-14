@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Providers from "./providers";
 import ThemeSwitch from "./components/ThemeSwitch";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Page",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main>{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
