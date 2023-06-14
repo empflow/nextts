@@ -3,7 +3,7 @@ import Search from "./Search";
 
 export default function Header()     {
   return (
-    <header className="gap-6 p-5 backdrop:blur-3xl bg-black/75 backdrop-blur-xl sticky top-0 w-full border-b border-b-white/20">
+    <header className="gap-6 p-5 backdrop-blur-xl bg-black/60 sticky top-0 w-full border-b border-b-white/20">
       <div className="max-w-6xl flex items-center justify-between m-auto overflow-auto">
         <h3 className="text-3xl font-semibold">Logo</h3>
         <nav className="">

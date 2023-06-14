@@ -8,6 +8,14 @@ export default function Search() {
   const router = useRouter();
 
   return (
-    <button onClick={() => router.push("/about")}>Go to about</button>
+    <div className="">
+      <input
+        type="text"
+        placeholder="Search..."
+        className="text-huge text-black"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+      />
+    </div>
   )
 }
