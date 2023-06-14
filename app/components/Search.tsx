@@ -12,7 +12,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search..."
-        className="dark:text-black w-full rounded-sm bg-neutral-700 px-3 py-1"
+        className="  w-full rounded-sm bg-neutral-700 px-3    py-1 dark:bg-white dark:text-black"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
