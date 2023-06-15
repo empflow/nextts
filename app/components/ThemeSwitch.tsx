@@ -2,37 +2,63 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import ComputerIcon from "../icons/Computer";
+import MoonIcon from "../icons/Moon";
+import SunIcon from "../icons/Sun";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme(); // provided by 'next-themes' and does not include a 'system' theme
+  const savedTheme = localStorage.getItem("theme");
+  const [chosenTheme, setChosenTheme] = useState(savedTheme ?? "system");
 
-  useEffect(() => setMounted(true), []);
+  const isLight = chosenTheme === "light";
+  const isDark = chosenTheme === "dark";
+  const isSystem = chosenTheme === "system";
 
+  console.log("hi");
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   if (!mounted) return null;
 
+  function updateTheme(theme: "light" | "dark" | "system") {
+    localStorage.setItem("theme", theme);
+    setTheme(theme);
+    setChosenTheme(theme);
+  }
+
   return (
-    <div className="flex items-center gap-2 border border-c-gray-500">
+    <div className="flex items-center gap-1 rounded-full border border-c-gray-600 p-1">
       <div
-        onClick={() => setTheme("light")}
-        className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-black"
+        onClick={() => updateTheme("light")}
+        className={`${
+          isLight ? "bg-c-gray-300 text-c-gray-1000 " : ""
+        }flex items-center justify-center rounded-full p-1 hover:cursor-pointer`}
+        title="Light theme"
       >
-        <Image src="/sun.svg" alt="computer" width={20} height={0} />
+        <SunIcon pxSize={20} className="fill-c-gray-900" />
       </div>
 
       <div
-        onClick={() => setTheme("light")}
-        className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-black"
+        onClick={() => updateTheme("system")}
+        className={`${
+          isSystem ? "bg-c-gray-300 text-c-gray-1000 " : ""
+        }flex items-center justify-center rounded-full p-1 hover:cursor-pointer`}
+        title="System theme"
       >
-        <Image src="/computer.svg" alt="computer" width={20} height={0} />
+        <ComputerIcon pxSize={20} className="fill-c-gray-900" />
       </div>
 
       <div
-        onClick={() => setTheme("light")}
-        className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-black"
+        onClick={() => updateTheme("dark")}
+        className={`${
+          isDark ? "bg-c-gray-300 text-c-gray-1000 " : ""
+        }flex items-center justify-center rounded-full p-1 hover:cursor-pointer`}
+        title="Dark theme"
       >
-        <Image src="/moon.svg" alt="computer" width={20} height={0} />
+        <MoonIcon pxSize={22} className="fill-c-gray-900" />
       </div>
     </div>
   );
