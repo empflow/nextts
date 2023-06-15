@@ -1,29 +1,28 @@
-"use client";
+import "./globals.css";
+import Header from "./components/Header";
+import Providers from "./providers";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import Footer from "./components/Footer";
 
-import './globals.css'
-import Link from 'next/link'
-import { Inter } from "next/font/google";
+export const metadata = {
+  title: "Page",
+  description: "This is a page of my NextJS web application",
+};
 
-const inter = Inter({
-  subsets: ["latin"]
-})
-
-
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <nav className='nav'>
-          <ul className='nav-items'>
-            <li className='nav-item'><Link href="/">Home</Link></li>
-            <li className='nav-item'><Link href="/about">About</Link></li>
-            <li className='nav-item'><Link href="/users">Users</Link></li>
-          </ul>
-        </nav>
-        <main>
-          {children}
-        </main>
+      <body className="flex min-h-screen flex-col bg-white text-black duration-300 dark:bg-black dark:text-white">
+        <Providers>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
-  )
+  );
 }
