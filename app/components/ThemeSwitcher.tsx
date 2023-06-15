@@ -6,7 +6,7 @@ import ComputerIcon from "../icons/Computer";
 import MoonIcon from "../icons/Moon";
 import SunIcon from "../icons/Sun";
 
-export default function ThemeSwitch() {
+export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const savedTheme = localStorage.getItem("theme");
