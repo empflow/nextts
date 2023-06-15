@@ -8,23 +8,20 @@ import SunIcon from "../icons/Sun";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, systemTheme } = useTheme(); // provided by 'next-themes' and does not include a 'system' theme
+  const { theme, setTheme } = useTheme();
   const savedTheme = localStorage.getItem("theme");
-  const [chosenTheme, setChosenTheme] = useState(savedTheme ?? "system");
+  if (!savedTheme) localStorage.setItem("theme", "system");
 
-  const isLight = chosenTheme === "light";
-  const isDark = chosenTheme === "dark";
-  const isSystem = chosenTheme === "system";
+  const isLight = theme === "light";
+  const isDark = theme === "dark";
+  const isSystem = theme === "system";
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
   function updateTheme(theme: "light" | "dark" | "system") {
     localStorage.setItem("theme", theme);
     setTheme(theme);
-    setChosenTheme(theme);
   }
 
   return (
