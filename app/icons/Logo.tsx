@@ -1,14 +1,16 @@
 interface Props {
   width?: number;
+  height?: number;
   className?: string;
 }
 
-export default function LogoIcon({ width, className }: Props) {
+export default function LogoIcon({ width, height, className }: Props) {
   return (
     <svg
       viewBox="0 0 62.488 12.094"
       xmlns="http://www.w3.org/2000/svg"
-      width={width ?? "32"}
+      width={width ?? undefined}
+      height={height ?? undefined}
       className={className || ""}
     >
       <g transform="matrix(0.076238, 0, 0, 0.076238, -9.869545, -16.954924)">

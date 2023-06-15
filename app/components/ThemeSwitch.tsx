@@ -28,7 +28,7 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-c-gray-800 p-1 dark:border-c-gray-700">
+    <div className="flex max-h-[36px] items-center gap-1 rounded-full border border-c-gray-800 p-1 dark:border-c-gray-700">
       <div
         onClick={() => updateTheme("light")}
         className={`${
