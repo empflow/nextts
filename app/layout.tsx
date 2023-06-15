@@ -1,11 +1,10 @@
 import "./globals.css";
 import Header from "./components/Header";
 import Providers from "./providers";
-import ThemeSwitcher from "./components/ThemeSwitcher";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "Page",
+  title: "Home",
   description: "This is a page of my NextJS web application",
 };
 
