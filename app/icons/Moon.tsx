@@ -1,10 +1,10 @@
-interface MoonIconProps {
+interface Props {
   color?: string;
   pxSize?: number;
   className?: string;
 }
 
-export default function MoonIcon({ color, pxSize, className }: MoonIconProps) {
+export default function MoonIcon({ color, pxSize, className }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -16,8 +16,6 @@ export default function ThemeSwitch() {
   const isDark = chosenTheme === "dark";
   const isSystem = chosenTheme === "system";
 
-  console.log("hi");
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -30,35 +28,56 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-c-gray-600 p-1">
+    <div className="flex items-center gap-1 rounded-full border border-c-gray-800 p-1 dark:border-c-gray-700">
       <div
         onClick={() => updateTheme("light")}
         className={`${
-          isLight ? "bg-c-gray-300 text-c-gray-1000 " : ""
+          isLight ? "bg-c-gray-300 " : ""
         }flex items-center justify-center rounded-full p-1 hover:cursor-pointer`}
         title="Light theme"
       >
-        <SunIcon pxSize={20} className="fill-c-gray-900" />
+        <SunIcon
+          pxSize={20}
+          className={`${
+            isLight
+              ? "fill-c-gray-900 dark:fill-c-gray-500"
+              : "fill-c-gray-800 dark:fill-c-gray-700"
+          }`}
+        />
       </div>
 
       <div
         onClick={() => updateTheme("system")}
         className={`${
-          isSystem ? "bg-c-gray-300 text-c-gray-1000 " : ""
+          isSystem ? "bg-c-gray-300 dark:bg-zinc-700 " : ""
         }flex items-center justify-center rounded-full p-1 hover:cursor-pointer`}
         title="System theme"
       >
-        <ComputerIcon pxSize={20} className="fill-c-gray-900" />
+        <ComputerIcon
+          pxSize={20}
+          className={`${
+            isSystem
+              ? "fill-c-gray-900 dark:fill-c-gray-500"
+              : "fill-c-gray-800 dark:fill-c-gray-700"
+          }`}
+        />
       </div>
 
       <div
         onClick={() => updateTheme("dark")}
         className={`${
-          isDark ? "bg-c-gray-300 text-c-gray-1000 " : ""
+          isDark ? "dark:bg-zinc-700 " : ""
         }flex items-center justify-center rounded-full p-1 hover:cursor-pointer`}
         title="Dark theme"
       >
-        <MoonIcon pxSize={22} className="fill-c-gray-900" />
+        <MoonIcon
+          pxSize={20}
+          className={`${
+            isDark
+              ? "fill-c-gray-900 dark:fill-c-gray-500"
+              : "fill-c-gray-800 dark:fill-c-gray-700"
+          }`}
+        />
       </div>
     </div>
   );

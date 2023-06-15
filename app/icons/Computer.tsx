@@ -1,14 +1,10 @@
-interface ComputerIconProps {
+interface Props {
   color?: string;
   pxSize?: number;
   className?: string;
 }
 
-export default function ComputerIcon({
-  color,
-  pxSize,
-  className,
-}: ComputerIconProps) {
+export default function ComputerIcon({ color, pxSize, className }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

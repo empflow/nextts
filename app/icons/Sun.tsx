@@ -1,10 +1,10 @@
-interface SunIconProps {
+interface Props {
   color?: string;
   pxSize?: number;
   className?: string;
 }
 
-export default function SunIcon({ color, pxSize, className }: SunIconProps) {
+export default function SunIcon({ color, pxSize, className }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
