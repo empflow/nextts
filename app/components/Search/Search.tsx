@@ -12,7 +12,7 @@ export default function Search() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setQuery("");
-    router.push(`/${query}`);
+    router.push(`/search/${query}`);
   }
 
   return (
