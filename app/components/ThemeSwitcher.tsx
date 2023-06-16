@@ -7,11 +7,11 @@ import MoonIcon from "../icons/Moon";
 import SunIcon from "../icons/Sun";
 
 export default function ThemeSwitcher() {
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  const { theme, setTheme } = useTheme();
   const savedTheme = localStorage.getItem("theme");
   if (!savedTheme) localStorage.setItem("theme", "system");
 
