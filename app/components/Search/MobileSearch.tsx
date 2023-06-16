@@ -45,8 +45,8 @@ export default function MobileSearch({
       <form
         className={`${
           mobileSearchOpen
-            ? "pointer-events-auto translate-y-[65px] opacity-100"
-            : "pointer-events-none translate-y-[25px] opacity-0"
+            ? "pointer-events-auto translate-y-[57px] opacity-100"
+            : "pointer-events-none opacity-0"
         } absolute left-0 right-0 top-0 duration-200`}
         onSubmit={onSubmit}
       >
