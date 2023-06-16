@@ -1,14 +1,19 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, FormEvent, SetStateAction } from "react";
 
 interface DesktopSearchProps {
   query: string;
   setQuery: Dispatch<SetStateAction<string>>;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
-export default function DesktopSearch({ query, setQuery }: DesktopSearchProps) {
+export default function DesktopSearch({
+  query,
+  setQuery,
+  onSubmit,
+}: DesktopSearchProps) {
   return (
     <div className="hidden md:block">
-      <form className="max-w-[250px] flex-grow">
+      <form className="max-w-[250px] flex-grow" onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="Search..."

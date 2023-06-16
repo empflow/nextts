@@ -1,14 +1,26 @@
 "use client";
 
 import SearchIcon from "@/app/icons/Search";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 interface MobileSearchProps {
   query: string;
   setQuery: Dispatch<SetStateAction<string>>;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
-export default function MobileSearch({ query, setQuery }: MobileSearchProps) {
+export default function MobileSearch({
+  query,
+  setQuery,
+  onSubmit,
+}: MobileSearchProps) {
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const mobileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -33,6 +45,7 @@ export default function MobileSearch({ query, setQuery }: MobileSearchProps) {
             ? "pointer-events-auto translate-y-[73px] opacity-100"
             : "pointer-events-none translate-y-[41px] opacity-0"
         } absolute left-0 right-0 top-0 duration-200`}
+        onSubmit={onSubmit}
       >
         <input
           type="text"
