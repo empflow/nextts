@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LogoIcon from "../icons/Logo";
-import Search from "./Search";
+import Search from "./Search/Search";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header() {
