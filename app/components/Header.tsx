@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LogoIcon from "../icons/Logo";
-import Search from "./Search";
+import Search from "./Search/Search";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
         <Link href="/">
           <LogoIcon className="fill-black dark:fill-white" height={24} />
         </Link>
-        <nav className="">
+        <nav className="hidden md:block">
           <ul className="flex gap-8">
             <li>
               <Link href="/">Home</Link>

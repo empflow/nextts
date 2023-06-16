@@ -7,11 +7,11 @@ import MoonIcon from "../icons/Moon";
 import SunIcon from "../icons/Sun";
 
 export default function ThemeSwitcher() {
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  const { theme, setTheme } = useTheme();
   const savedTheme = localStorage.getItem("theme");
   if (!savedTheme) localStorage.setItem("theme", "system");
 
@@ -26,7 +26,7 @@ export default function ThemeSwitcher() {
 
   return (
     <div className="flex max-h-[36px] items-center gap-1 rounded-full border border-c-gray-800 p-1 dark:border-c-gray-700">
-      <div
+      <button
         onClick={() => updateTheme("light")}
         className={`${
           isLight ? "bg-c-gray-300 " : ""
@@ -41,9 +41,9 @@ export default function ThemeSwitcher() {
               : "fill-c-gray-800 dark:fill-c-gray-700"
           }`}
         />
-      </div>
+      </button>
 
-      <div
+      <button
         onClick={() => updateTheme("system")}
         className={`${
           isSystem ? "bg-c-gray-300 dark:bg-zinc-700 " : ""
@@ -58,9 +58,9 @@ export default function ThemeSwitcher() {
               : "fill-c-gray-800 dark:fill-c-gray-700"
           }`}
         />
-      </div>
+      </button>
 
-      <div
+      <button
         onClick={() => updateTheme("dark")}
         className={`${
           isDark ? "dark:bg-zinc-700 " : ""
@@ -75,7 +75,7 @@ export default function ThemeSwitcher() {
               : "fill-c-gray-800 dark:fill-c-gray-700"
           }`}
         />
-      </div>
+      </button>
     </div>
   );
 }
