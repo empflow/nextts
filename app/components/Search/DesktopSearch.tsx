@@ -21,7 +21,7 @@ export default function DesktopSearch({
         <input
           type="text"
           placeholder="Search..."
-          className="w-full rounded rounded-r-none border border-transparent bg-c-gray-200 px-3 py-1 text-black placeholder:font-light placeholder:text-c-gray-800 focus:border-blue-500 dark:bg-c-gray-1000 dark:text-white dark:focus:border-blue-900"
+          className="w-full rounded rounded-r-none border border-transparent bg-c-gray-200 px-3 py-1 text-black placeholder:font-light placeholder:text-c-gray-800 focus:border-blue-500 dark:bg-c-gray-1000 dark:text-white dark:focus:border-blue-800"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
