@@ -5,7 +5,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 w-full gap-6 border-b border-b-zinc-400 bg-white/70 p-5 backdrop-blur-xl dark:border-b-zinc-700 dark:bg-black/70">
+    <header className="sticky top-0 w-full gap-6 border-b border-b-zinc-400 bg-white/70 px-3 py-4  backdrop-blur-xl dark:border-b-zinc-700 dark:bg-black/70 md:p-6">
       <div className="m-auto flex max-w-6xl items-center justify-between overflow-auto">
         <Link href="/">
           <LogoIcon className="fill-black dark:fill-white" height={24} />
