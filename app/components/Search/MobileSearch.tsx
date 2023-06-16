@@ -36,14 +36,17 @@ export default function MobileSearch({
         className="hover:cursor-pointer"
         onClick={() => setMobileSearchOpen((prev) => !prev)}
       >
-        <SearchIcon />
+        <SearchIcon
+          pxSize={24}
+          className="fill-c-gray-1000 dark:fill-c-gray-500"
+        />
       </button>
 
       <form
         className={`${
           mobileSearchOpen
-            ? "pointer-events-auto translate-y-[73px] opacity-100"
-            : "pointer-events-none translate-y-[41px] opacity-0"
+            ? "pointer-events-auto translate-y-[65px] opacity-100"
+            : "pointer-events-none translate-y-[25px] opacity-0"
         } absolute left-0 right-0 top-0 duration-200`}
         onSubmit={onSubmit}
       >
