@@ -5,3 +5,11 @@
 *:focus {
   outline: none;
 }
+
+*:focus-visible {
+  outline: 3px solid rgba(50, 145, 255, 0.8);
+}
+
+input:focus-visible {
+  outline: none;
+}
