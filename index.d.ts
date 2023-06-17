@@ -1,4 +1,4 @@
-type SearchResultsPage = {
+type SearchResult = {
   pageid: string;
   title: string;
   extract: string;
@@ -11,6 +11,6 @@ type SearchResultsPage = {
 
 type SearchResults = {
   query?: {
-    pages?: Record<string, SearchResultsPage>;
+    pages?: Record<string, SearchResult>;
   };
 };

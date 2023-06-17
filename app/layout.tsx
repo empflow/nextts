@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col bg-white text-black duration-200 dark:bg-black dark:text-white">
         <Providers>
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="m-auto w-full max-w-3xl flex-grow">{children}</main>
           <Footer />
         </Providers>
       </body>
