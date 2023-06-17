@@ -1,5 +1,6 @@
 import BlockedIcon from "@/app/icons/Blocked";
 import Image from "next/image";
+import Link from "next/link";
 
 interface SearchItemProps {
   result: SearchResult;
@@ -29,11 +30,17 @@ export default function SearchItem({ result }: SearchItemProps) {
   );
 
   return (
-    <article className="flex w-full gap-5">
-      <div className="relative h-40 w-40 flex-shrink-0 flex-grow-0">
-        {thumbnail}
-      </div>
-      <div>{textContent}</div>
-    </article>
+    <Link
+      href={`https://en.wikipedia.org/?curid=${result.pageid}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <article className="flex w-full gap-5">
+        <div className="relative h-40 w-40 flex-shrink-0 flex-grow-0">
+          {thumbnail}
+        </div>
+        <div>{textContent}</div>
+      </article>
+    </Link>
   );
 }
