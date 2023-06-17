@@ -1,6 +1,8 @@
 import getSearchResults from "@/lib/getSearchResults";
 import { Metadata } from "next";
+import { Suspense } from "react";
 import SearchItem from "./components/SearchItem";
+import Loading from "./loading";
 
 interface SearchResultsParams {
   params: { query: string };
@@ -16,6 +18,14 @@ export async function generateMetadata({
 export default async function SearchResults({
   params: { query },
 }: SearchResultsParams) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <SearchResultsContent query={query} />
+    </Suspense>
+  );
+}
+
+async function SearchResultsContent({ query }: { query: string }) {
   const results = (await getSearchResults(query)).query?.pages;
 
   return (
