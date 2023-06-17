@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import DesktopSearch from "./DesktopSearch";
 import MobileSearch from "./MobileSearch";
 
@@ -9,10 +9,16 @@ export default function Search() {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setQuery("");
+    router.push(`/search/${query}`);
+  }
+
   return (
     <>
-      <MobileSearch {...{ query, setQuery }} />
-      <DesktopSearch {...{ query, setQuery }} />
+      <MobileSearch {...{ query, setQuery }} onSubmit={handleSubmit} />
+      <DesktopSearch {...{ query, setQuery }} onSubmit={handleSubmit} />
     </>
   );
 }
